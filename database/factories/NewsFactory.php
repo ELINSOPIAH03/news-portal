@@ -21,10 +21,10 @@ class NewsFactory extends Factory
         
         return [
             //
-            'title' => $this->faker->word,
-            'deskripsi' => $this->faker->paragraph(2, true),
-            'category' => $this->faker->sentence,
-            'author' => $this->faker->unique()->safeEmail,
+            'title' => fake()->sentence(),
+            'deskripsi' => fake()->paragraph(2, true),
+            'category' => fake()->text(20),
+            'author' => fake()->email(),
 
             // 'title' => fake()->str_random(5),
             // 'deskripsi' => fake()->paragraph(2, true),

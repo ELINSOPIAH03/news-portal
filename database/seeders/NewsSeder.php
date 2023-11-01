@@ -25,6 +25,6 @@ class NewsSeder extends Seeder
         //     'category' => fake()->sentence(),
         //     'author' => fake()->email(),
         // ]);
-        News::factory()->count(5)->create();
+        News::factory()->count(45)->create();
     }
 }
