@@ -7,6 +7,8 @@ use App\Models\News;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
+use function Termwind\render;
+
 class NewsController extends Controller
 {
     /**
@@ -43,6 +45,14 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         //
+        $news =  new News();
+        $news->title = $request->title;
+        $news->deskripsi = $request->deskripsi;
+        $news->category = $request->category;
+        $news->author = auth()->user()->email;
+
+        $news->save();
+        return redirect()->back()->with('message', 'berita berhasil  dibuat');
     }
 
     /**
